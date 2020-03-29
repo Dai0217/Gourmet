@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gurunavi</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if @b %>
+      <div class="search"><%= @b+":おすすめグルメ検索" %></div>
+    <% else %>
+      <div class="search"><%= "飲食店検索" %></div>
+    <% end %>
+    <div class="freeword">
+      <%= form_tag("/search/top") do %>
+        <p>フリーワード検索できます！</p>
+        <input class="free" name="free">
+        <input class="button" type="submit" value="送信">
+      <% end %>
+    </div>
+    <%= yield %>
+  </body>
+</html>

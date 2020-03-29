@@ -1,0 +1,14 @@
+<div class="all">
+  <% @a.times do |i| %>
+    <div class="contents">
+      <img class="photo" width="256" alt="<%= "#{@result["rest"][i]["name"]}"%>" src="<%= @result["rest"][i]["image_url"]["shop_image1"] %>">
+      <h4 class="name"><%= link_to("#{@result["rest"][i]["name"]}",@result["rest"][i]["url"]) %></h4>
+      <h3 class="pr"><%= @result["rest"][i]["pr"]["pr_short"] %></h3>
+      <h4 class="address"><%= "・住所: "+"#{@result["rest"][i]["address"]}" %></h4>
+      <div class="contact">
+        <h4 class="access"><%= "・#{@result["rest"][i]["access"]["line"]} "+"#{@result["rest"][i]["access"]["station"]}"+"から徒歩"+"#{@result["rest"][i]["access"]["walk"]}"+"分" %></h4>
+        <h4 class="budget"><%= "・平均予算: #{@result["rest"][i]["budget"]} 円" %></h4>
+      </div>
+    </div>
+  <% end %>
+</div>
